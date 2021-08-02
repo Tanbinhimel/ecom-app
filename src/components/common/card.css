@@ -10,14 +10,25 @@
 
 .card-body {
   justify-content: left;
+  margin: 0%;
 }
 .card-element {
   text-align: left;
-  font-size: small;
   margin: 0;
 }
 
 .card-title {
   margin: 0%;
-  font-size: 15px;
+  font-size: 13px;
+}
+
+.highlighted {
+  color: red;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.non-highlighted {
+  color: gray;
+  font-size: 10px;
 }
