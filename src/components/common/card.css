@@ -1,0 +1,23 @@
+.card {
+  height: 300px;
+  width: 170px;
+}
+
+.card-img-top {
+  width: fit-content;
+  height: 80%;
+}
+
+.card-body {
+  justify-content: left;
+}
+.card-element {
+  text-align: left;
+  font-size: small;
+  margin: 0;
+}
+
+.card-title {
+  margin: 0%;
+  font-size: 15px;
+}

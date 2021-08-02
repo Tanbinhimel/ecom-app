@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Login extends Component {
   render() {
     return (
-      <div>
+      <body className="text-center">
         <form class="form-signin">
           <img
             class="mb-4"
@@ -44,7 +44,7 @@ class Login extends Component {
           </button>
           <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
         </form>
-      </div>
+      </body>
     );
   }
 }

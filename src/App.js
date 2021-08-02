@@ -19,10 +19,6 @@ class App extends Component {
             <Redirect from="/" exact to="products" />
             <Redirect to="/not-found" />
           </Switch>
-          <h1 className="display-1">Display 1</h1>
-          <h1 className="display-2">Display 2</h1>
-          <h1 className="display-3">Display 3</h1>
-          <h1 className="display-4">Display 4</h1>
         </main>
       </div>
     );
