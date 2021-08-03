@@ -21,7 +21,7 @@ const products = [
     price: 7.495,
     discount: 18,
     numberInStock: 70,
-    rating: 2,
+    rating: 2.5,
   },
   {
     _id: "l5KJr9yvMe",

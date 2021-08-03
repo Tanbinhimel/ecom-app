@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./common/card";
+import Rating from "./common/rating";
 import { getProducts } from "../services/productServices";
 
 class Products extends Component {
@@ -8,13 +9,22 @@ class Products extends Component {
   };
 
   cardBody = (product) => [
-    <p className="card-element card-title">{product.productName}</p>,
-    <p className="card-element highlighted">
-      ${this.calculateNewPrice(product.price, product.discount)}
-    </p>,
-    <p className="card-element non-highlighted">
-      <del>${product.price.toFixed(2)}</del>
-    </p>,
+    {
+      className: "card-element card-title",
+      data: product.productName,
+    },
+    {
+      className: "card-element highlighted",
+      data: "$" + this.calculateNewPrice(product.price, product.discount),
+    },
+    {
+      className: "card-element non-highlighted",
+      data: "$" + product.price.toFixed(2),
+    },
+    {
+      className: "card-element",
+      data: <Rating rating={product.rating} />,
+    },
   ];
 
   componentDidMount() {
@@ -31,12 +41,12 @@ class Products extends Component {
     const { products } = this.state;
     return (
       <div>
-        <h1>products</h1>
         <div className="row">
           {products.map((product) => (
             <Card
               cardImageURL={"https://picsum.photos/500/500"}
               cardBody={this.cardBody(product)}
+              badgeValue={product.discount + "%off"}
             />
           ))}
         </div>
