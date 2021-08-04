@@ -2,9 +2,11 @@
   height: 320px;
   width: 160px;
   margin: 0px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.badge1 {
+.custom-badge {
   background-color: yellow;
   position: absolute;
   top: 1%;
@@ -14,16 +16,16 @@
   font-weight: normal;
 }
 
+.card-body {
+  position: relative;
+  max-height: auto;
+  width: auto;
+}
 .card-img-top {
-  position: sticky;
-  width: fit-content;
+  min-height: 70%;
+  max-width: auto;
 }
 
-.card-body {
-  position: sticky;
-  justify-content: left;
-  height: 30%;
-}
 .card-element {
   text-align: left;
   margin: 0;

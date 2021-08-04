@@ -8,15 +8,17 @@ class Card extends Component {
   }
 
   render() {
-    const { cardImageURL, cardBody, badgeValue } = this.props;
+    const { cardImageURL, cardBadge, cardBody, onCardClick } = this.props;
     return (
-      <div class="col my-2">
-        <div className="card">
-          <div className="image">
-            <img className="card-img-top" src={cardImageURL} />
-            <span className="badge badge-pill badge1">{badgeValue}</span>
+      <div class="col">
+        <div className="card my-2" onClick={onCardClick}>
+          <div className="card-image">
+            <img className="card-img-top" src={cardImageURL} alt="" />
           </div>
-          <div className="card-body">
+          <div className="card-badge">
+            {cardBadge.map((element) => this.renderElement(element))}
+          </div>
+          <div className="container container-fluid card-body">
             {cardBody.map((element) => this.renderElement(element))}
           </div>
         </div>

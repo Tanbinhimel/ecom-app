@@ -16,8 +16,12 @@ class NavBar extends Component {
               <NavLink className="nav-link" to="/products">
                 Products
               </NavLink>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <NavLink className="nav-link" to="/products">
+                Products
+              </NavLink>
+              <NavLink className="nav-link" to="/cart">
+                Cart
+              </NavLink>
               <NavLink className="nav-link" to="/login">
                 Login
               </NavLink>
