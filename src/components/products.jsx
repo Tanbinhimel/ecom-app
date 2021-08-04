@@ -16,6 +16,7 @@ class Products extends Component {
     this.props.history.push(`/products/${product._id}`);
     console.log(product);
   };
+
   render() {
     const { products } = this.state;
     console.log(this.props.history);

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getProduct } from "../services/productServices";
 import Rating from "./common/rating";
 import calculateNewPrice, { generateRatingArray } from "./../utils";
+import { saveCartItem } from "../services/cartServices";
 
 class Product extends Component {
   state = {
@@ -15,8 +16,9 @@ class Product extends Component {
   }
 
   handleOnClick = (id) => {
-    console.log(id);
     this.props.history.push("/cart");
+    const product = getProduct(id);
+    saveCartItem(product);
   };
 
   render() {

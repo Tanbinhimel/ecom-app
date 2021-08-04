@@ -16,11 +16,8 @@ class NavBar extends Component {
               <NavLink className="nav-link" to="/products">
                 Products
               </NavLink>
-              <NavLink className="nav-link" to="/products">
-                Products
-              </NavLink>
               <NavLink className="nav-link" to="/cart">
-                Cart
+                Cart <span className="badge badge-primary">{1}</span>
               </NavLink>
               <NavLink className="nav-link" to="/login">
                 Login
