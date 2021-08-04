@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 
 class Cart extends Component {
-  state = {};
+  state = {
+    cartItem: [],
+    };
+    
+    componentDidMount() {
+        
+    }
   render() {
-    return <h1>cart</h1>;
+    const { cartItem } = this.state;
+    return cartItem.map((item) => <h1>{item}</h1>);
   }
 }
 

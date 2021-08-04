@@ -14,19 +14,37 @@ class Product extends Component {
     this.setState({ product });
   }
 
+  handleOnClick = (id) => {
+    console.log(id);
+    this.props.history.push("/cart");
+  };
+
   render() {
-    const { productName, price, catagory, rating } = this.state.product;
+    const { _id, productName, price, catagory, rating, productDescription } =
+      this.state.product;
     return (
       <div className="container container-fluid">
+        <img className="m-2" src="https://picsum.photos/500/500" alt="" />
         <h1 className="display-3">{productName}</h1>
-        <img src="https://picsum.photos/500/500" alt="" />
-        <h1 className="display-3">{calculateNewPrice(this.state.product)}</h1>
-        <h1 className="display-3">{price}</h1>
-        <h1 className="display-3">{catagory}</h1>
-        <h1 className="display-3">{rating}</h1>
-        <del>
-          <Rating ratingArray={generateRatingArray(rating)} />
-        </del>
+        <p className="">{productDescription}</p>
+        <p className="">{catagory}</p>
+        <div className="row">
+          <div className="col">
+            <p className="">${calculateNewPrice(this.state.product)}</p>
+            <del>
+              <p className="">${price}</p>
+            </del>
+          </div>
+          <div className="col">
+            <Rating ratingArray={generateRatingArray(rating)} />
+          </div>
+        </div>
+        <button
+          onClick={() => this.handleOnClick(_id)}
+          className="btn btn-primary"
+        >
+          Add to Cart
+        </button>
       </div>
     );
   }
