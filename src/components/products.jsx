@@ -19,7 +19,6 @@ class Products extends Component {
 
   render() {
     const { products } = this.state;
-    console.log(this.props.history);
     return (
       <ProductCollection
         products={products}

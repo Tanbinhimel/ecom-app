@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { getProduct } from "../services/productServices";
 import Rating from "./common/rating";
 import calculateNewPrice, { generateRatingArray } from "./../utils";
-import { saveCartItem } from "../services/cartServices";
 
 class Product extends Component {
   state = {
@@ -10,18 +9,14 @@ class Product extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     const { match } = this.props;
     const product = getProduct(match.params.id);
     this.setState({ product });
   }
 
-  handleOnClick = (id) => {
-    this.props.history.push("/cart");
-    const product = getProduct(id);
-    saveCartItem(product);
-  };
-
   render() {
+    const { onItemAddToCart } = this.props;
     const { _id, productName, price, catagory, rating, productDescription } =
       this.state.product;
     return (
@@ -42,7 +37,7 @@ class Product extends Component {
           </div>
         </div>
         <button
-          onClick={() => this.handleOnClick(_id)}
+          onClick={() => onItemAddToCart(_id)}
           className="btn btn-primary"
         >
           Add to Cart
