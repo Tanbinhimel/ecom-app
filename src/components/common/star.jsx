@@ -1,12 +1,15 @@
 import React from "react";
+import StarRoundedIcon from "@material-ui/icons/StarRounded";
+import StarBorderRoundedIcon from "@material-ui/icons/StarBorderRounded";
+import StarHalfRoundedIcon from "@material-ui/icons/StarHalfRounded";
 
 const Star = ({ type }) => {
   if (type === "solid") {
-    return <i class="fa fa-star" aria-hidden="true" />;
+    return <StarRoundedIcon fontSize="small" />;
   } else if (type === "half-solid") {
-    return <i class="fa fa-star-half-o" aria-hidden="true" />;
+    return <StarHalfRoundedIcon fontSize="small" />;
   } else {
-    return <i class="fa fa-star-o" aria-hidden="true" />;
+    return <StarBorderRoundedIcon fontSize="small" />;
   }
 };
 

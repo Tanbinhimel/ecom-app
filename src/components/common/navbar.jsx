@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
+import Badge from "@material-ui/core/Badge";
 
 const NavBar = ({ cartLength }) => {
   return (
@@ -16,10 +18,11 @@ const NavBar = ({ cartLength }) => {
               Products
             </NavLink>
             <NavLink className="nav-link" to="/cart">
-              Cart{" "}
-              <span className="badge badge-primary">
-                {cartLength !== 0 ? cartLength : null}
-              </span>
+              <ShoppingCartRoundedIcon />
+              <Badge
+                badgeContent={cartLength !== 0 ? cartLength : null}
+                color="primary"
+              />
             </NavLink>
             <NavLink className="nav-link" to="/login">
               Login
@@ -32,3 +35,34 @@ const NavBar = ({ cartLength }) => {
 };
 
 export default NavBar;
+
+// import React from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
+
+// import MailIcon from '@material-ui/icons/Mail';
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& > *': {
+//       margin: theme.spacing(1),
+//     },
+//   },
+// }));
+
+// export default function SimpleBadge() {
+//   const classes = useStyles();
+
+//   return (
+//     <div className={classes.root}>
+//       <Badge badgeContent={4} color="primary">
+//         <MailIcon />
+//       </Badge>
+//       <Badge badgeContent={4} color="secondary">
+//         <MailIcon />
+//       </Badge>
+//       <Badge badgeContent={4} color="error">
+//         <MailIcon />
+//       </Badge>
+//     </div>
+//   );
+// }
